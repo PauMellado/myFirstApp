@@ -276,6 +276,8 @@
                     <navigationItem key="navigationItem" id="MBd-rf-ssa"/>
                     <connections>
                         <outlet property="conPassword" destination="C4b-kQ-Yex" id="eXO-UY-4xC"/>
+                        <outlet property="email" destination="dac-k9-wrs" id="vjt-El-UOl"/>
+                        <outlet property="name" destination="bu7-Th-0N3" id="GbI-fQ-l4h"/>
                         <outlet property="passWord" destination="anc-Ce-A6h" id="bhy-WO-iky"/>
                         <outlet property="texCon" destination="757-M7-YRy" id="4Zc-91-DV5"/>
                     </connections>

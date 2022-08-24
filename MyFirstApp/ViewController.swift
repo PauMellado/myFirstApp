@@ -11,7 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var conPassword: UITextField!
-   
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var texCon: UILabel!
     
     
@@ -47,15 +48,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorChange(_ sender: Any) {
-        if passWord.text == conPassword.text {
+        if passWord.text == conPassword.text && (passWord.text != "" || conPassword.text != ""){
             print("Contraseñas Iguales")
             texCon.text = "Los password coinciden"
             texCon.textColor = UIColor.green
             
-        }else{
+        }else if passWord.text != conPassword.text && (passWord.text != "" && conPassword.text != "") {
             texCon.text = "Las password no coinciden"
             texCon.textColor = UIColor.red
+        }else if name.text == "" || email.text == ""{
+            texCon.text = "Campo Vacio"
+        }else {
+            texCon.text = "Campo Vacio"
         }
+        
+        
     }
     
     func semaforo(name: String) -> String? {
