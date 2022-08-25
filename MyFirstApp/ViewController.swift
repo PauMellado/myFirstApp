@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorChange(_ sender: Any) {
-        if passWord.text == conPassword.text && (passWord.text != "" || conPassword.text != ""){
+        if passWord.text == conPassword.text && (passWord.text != "" || conPassword.text != "") {
             print("Contraseñas Iguales")
             texCon.text = "Los password coinciden"
             texCon.textColor = UIColor.green
@@ -56,10 +56,12 @@ class ViewController: UIViewController {
         }else if passWord.text != conPassword.text && (passWord.text != "" && conPassword.text != "") {
             texCon.text = "Las password no coinciden"
             texCon.textColor = UIColor.red
-        }else if name.text == "" || email.text == ""{
+        }else if name.text == "" || email.text == "" || passWord.text == "" || conPassword.text == "" {
             texCon.text = "Campo Vacio"
+            texCon.textColor = UIColor.black
         }else {
             texCon.text = "Campo Vacio"
+            texCon.textColor = UIColor.black
         }
         
         

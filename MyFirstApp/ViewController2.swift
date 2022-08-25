@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    @IBOutlet weak var palindromo: UITextField!
+    @IBOutlet weak var resultado: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +20,32 @@ class ViewController2: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func procesarFrase(_ sender: UIButton) {
+        
+        if let vacio = palindromo.text?.isEmpty {
+            if vacio == true{
+                resultado.text = "El campo esta Vacio"
+            }else{
+                
+                if var fraseUnwrap = palindromo.text?.lowercased(){
+                    
+                    fraseUnwrap = fraseUnwrap.replacingOccurrences(of: " ", with: "")
+                    let frase = fraseUnwrap
+                    fraseUnwrap = String(fraseUnwrap.reversed())
+                    if frase == fraseUnwrap {
+                        resultado.text = "Es un palindromo"
+                    }else{
+                        resultado.text = "No es un palindromo"
+                    }
+                
+                    print(fraseUnwrap)
+                    
+                }
+                
+                
+            }
+        }
+        
+        
     }
-    */
-
 }
