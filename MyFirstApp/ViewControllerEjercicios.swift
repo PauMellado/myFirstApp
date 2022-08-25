@@ -11,13 +11,82 @@ class ViewControllerEjercicios: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Ejercicio1
         print(make_sum(x: 5.0,y: 8))
-
+        //Ejercicio2
+        let array : [Int] = [1, 1, 9, 4, 8]
+        print(sevenCount(array: array))
+        //Ejercicio3
+        let sequence : [Int] = [2,7,1,1,1]
+        print(secuencia(array: sequence))
+        //Ejercicio4
+        let suma : [Int] = [1,2,3,4]
+        print(sumaTwo(array: suma))
+        //Ejercicio 5
+        var  max : [Int] = [10,5,0,50]
+        print(numMax(array: max))
         // Do any additional setup after loading the view.
     }
     //Ejercicio1
     func make_sum(x: Float, y: Int) -> Float {
             return x + Float(y)
         }
+    //Ejercicio2
+    func sevenCount(array: [Int]) -> Int{
+        var i = 0;
+        for item in array{
+            if item == 7 {
+                i += 1
+            }
+        }
+        
+        return i
+    }
+    
+    //Ejercicio3
+    func secuencia(array: [Int]) -> Bool {
+        var aux : Int
+        for i in 0..<array.count {
+            
+            aux = array[i]
+            
+            if i < array.count-2 && aux == array[i+1] && aux == array[i+2]{
+                return true
+            }
+                    
+        }
+        return false
+    }
+    //Ejercicio4
+    func sumaTwo(array: [Int]) -> Int {
+        if array.count == 0 {
+            return 0
+        }else if array.count < 2{
+            return array[0]
+        }else {
+            return array[0] + array[1]
+        }
+        
+     
+    }
+    //Ejercicio5
+    func numMax(array: [Int]) -> Int {
+        var array = array
+        var val: Bool = true
+        while (val) {
+            val = false
+            for i in 0..<array.count - 1 {
+                if array[i] < array[i+1] {
+                    let aux = array[i]
+                    array[i] = array[i+1]
+                    array[i+1] = aux
+                    val = true
+                }
+            }
+        }
+        
+        return array[0]
+    }
+//------------------------------------------------------
+
 }
