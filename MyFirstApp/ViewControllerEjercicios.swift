@@ -14,18 +14,19 @@ class ViewControllerEjercicios: UIViewController {
         //Ejercicio1
         print(make_sum(x: 5.0,y: 8))
         //Ejercicio2
-        let array : [Int] = [1, 1, 9, 4, 8]
+        let array : [Int] = [1,1,7,4, 8,7,0,7,7,8,9]
         print(sevenCount(array: array))
         //Ejercicio3
-        let sequence : [Int] = [2,7,1,1,1]
+        let sequence : [Int] = [2,7,2,1,2,3,3,3,9]
         print(secuencia(array: sequence))
         //Ejercicio4
-        let suma : [Int] = [1,2,3,4]
+        let suma : [Int] = [10,2,3,4,8,9,9]
         print(sumaTwo(array: suma))
         //Ejercicio 5
-        var  max : [Int] = [10,5,0,50]
+        var  max : [Int] = [10,5,120,50,90]
         print(numMax(array: max))
         // Do any additional setup after loading the view.
+        self.metodoVariable()
     }
     //Ejercicio1
     func make_sum(x: Float, y: Int) -> Float {
@@ -59,15 +60,18 @@ class ViewControllerEjercicios: UIViewController {
     }
     //Ejercicio4
     func sumaTwo(array: [Int]) -> Int {
-        if array.count == 0 {
-            return 0
-        }else if array.count < 2{
-            return array[0]
-        }else {
-            return array[0] + array[1]
-        }
         
-     
+        switch array.count {
+        case 0:
+            return 0
+        case 1 ... 2:
+            return array[0]
+        case 3... :
+            return array[0] + array[1]
+        default:
+            return 0
+            
+        }
     }
     //Ejercicio5
     func numMax(array: [Int]) -> Int {
@@ -89,4 +93,7 @@ class ViewControllerEjercicios: UIViewController {
     }
 //------------------------------------------------------
 
+    func metodoVariable(variableUno: String = "Hola"){
+        print(variableUno)
+    }
 }
